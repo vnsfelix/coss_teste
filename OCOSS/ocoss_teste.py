@@ -5,20 +5,23 @@ def iniciar_ocoss():
         comando = input("\nO que o senhor gostaria de fazer hoje? (Ou digite 'sair'): ").lower().strip()
 
         if "calculadora" in comando:
-            print("Deseja abir o [1] Aplicativo? ou [2] para sair")
+            print("Deseja abir no [1] Aplicativo ou [2] voltar?")
             escolha = input("> ")
 
             if escolha == "1":
                 print("Abrindo calculadora...")
-                os.system("start Calculadora")
+                os.system("calc")
+            elif escolha == "2":
+                print("Voltando...")
+                continue
             else:
                 print("opção invalida.")
-        elif escolha == "2":
+        elif "sair" in comando:
             print("Finalizando Sistema...")
             break
         else:
             print("Desculpe, não reconheço esse comando.")
-
+        
         if "spotify" in comando:
             print("Deseja abir no [1] Aplicativo ou [2] Navegador?")
             escolha = input("> ")
