@@ -9,8 +9,10 @@ def iniciar_ocoss():
             escolha = input("> ")
 
             if escolha == "1":
+                print("Abrindo spotify...")
                 os.system("start spotify")
             elif escolha == "2":
+                print("Abrindo Navegador...")
                 os.system("start https://www.spotify.com")
             else:
                 print("opção invalida.")
