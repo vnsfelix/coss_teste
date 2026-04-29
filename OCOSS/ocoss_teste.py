@@ -20,11 +20,6 @@ def iniciar_ocoss():
                 continue
             else:
                 print("opção invalida.")
-        elif "sair" in comando:
-            print("Finalizando Sistema...")
-            break
-        else:
-            print("Desculpe, não reconheço esse comando.")
 
         if "calculadora" in comando:
             print("Deseja abir no [1] Aplicativo ou [2] voltar?")
@@ -38,9 +33,6 @@ def iniciar_ocoss():
                 continue
             else:
                 print("opção invalida.")
-        elif "sair" in comando:
-            print("Finalizando Sistema...")
-            break
         else:
             print("Desculpe, não reconheço esse comando.")
 
@@ -56,9 +48,6 @@ def iniciar_ocoss():
                 os.system("start https://www.spotify.com")
             else:
                 print("opção invalida.")
-        elif "sair" in comando:
-            print("Finalizando Sistema...")
-            break
         else:
             print("Desculpe, não reconheço esse comando.")
         
