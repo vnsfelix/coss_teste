@@ -1,58 +1,40 @@
 import os
+import webbrowser
 
 def iniciar_ocoss():
+    print("=== OCOSS iniciado. Digite 'sair' para encerrar. ===")
+    
     while True:
-        comando = input("\nO que o senhor gostaria de fazer hoje? (Ou digite 'sair'): ").lower().strip()
+        comando = input("\nO que você gostaria de fazer hoje? ").lower().strip()
 
         if "clima" in comando:
-            print("Deseja abir no [1] Aplicativo ou [2] Navegador? | Digite [3] para voltar")
-            escolha = input("> ")
-
+            print("[1] Aplicativo  [2] Navegador  [3] Voltar")
+            escolha = input("> ").strip()
             if escolha == "1":
-                print("Abrindo Previsão do Tempo...")
-                os.system("start bingweather:")    
+                os.system("start bingweather:")
             elif escolha == "2":
-                print("Abrindo Navegador")
-                os.system("start https://www.google.com/search?q=google+clima&sca_esv=09c971a9c1a6e973&biw=1920&bih=945&sxsrf=ANbL-n7cpq_tZ9DNPy_0SitfpngNnj761g%3A1777471634152&ei=khDyafGFCdCf5OUP2OujqQ4&oq=goo&gs_lp=Egxnd3Mtd2l6LXNlcnAiA2dvbyoCCAEyFhAuGIAEGIoFGEMYsQMYgwEYxwEY0QMyChAAGIAEGIoFGEMyChAAGIAEGIoFGEMyDRAAGIAEGIoFGEMYsQMyCxAAGIAEGLEDGIMBMhAQABiABBiKBRhDGLEDGIMBMggQABiABBixAzIQEAAYgAQYigUYQxixAxiDATINEAAYgAQYigUYQxixAzILEAAYgAQYsQMYgwEyJRAuGIAEGIoFGEMYsQMYgwEYxwEY0QMYlwUY3AQY3gQY4ATYAQJIjhdQ7wNY3w5wAngBkAEDmAFxoAHnCqoBBDIuMTG4AQPIAQD4AQGYAgagAqsDqAIUwgIKEAAYRxjWBBiwA8ICDRAAGIAEGIoFGEMYsAPCAhcQLhjYAhi4BhjaBhjcBhjIAxiwA9gBAcICFxAuGNwGGLgGGNoGGNgCGMgDGLAD2AEBwgIQEAAYgAQYigUYQxixAxjJA8ICCxAAGIAEGLEDGJIDwgILEAAYgAQYigUYkgPCAgcQABiABBgKwgIFEAAYgATCAhYQABiABBiKBRhDGOcGGOoCGLQC2AEBwgIcEC4YgAQYigUYQxjnBhjHARjRAxjqAhi0AtgBAcICEBAAGAMYjwEY6gIYtALYAQLCAhAQLhgDGI8BGOoCGLQC2AECwgIREC4YgAQYsQMYgwEYxwEY0QPCAhMQLhiABBiKBRhDGLEDGMcBGNEDmAME8QVVAT6-PZhd6ogGAZAGDboGBAgBGBm6BgYIAhABGAqSBwMyLjSgB8ZPsgcDMC40uAejA8IHBTAuMy4zyAcRgAgB&sclient=gws-wiz-serp")
-            elif escolha == "3":
-                print("Voltando...")
-                continue
+                webbrowser.open("https://www.google.com/search?q=clima+hoje")
 
-        if "calculadora" in comando:
-            print("Deseja abir no [1] Aplicativo ou [2] voltar?")
-            escolha = input("> ")
+        elif "calculadora" in comando:
+            print("Abrindo calculadora...")
+            os.system("calc")
 
+        elif "spotify" in comando:
+            print("[1] Aplicativo  [2] Navegador")
+            escolha = input("> ").strip()
             if escolha == "1":
-                print("Abrindo calculadora...")
-                os.system("calc")
+                os.system("start spotify:")
             elif escolha == "2":
-                print("Voltando...")
-                continue
+                webbrowser.open("https://www.spotify.com")
 
-        if "spotify" in comando:
-            print("Deseja abir no [1] Aplicativo ou [2] Navegador?")
-            escolha = input("> ")
+        elif "youtube" in comando:
+            webbrowser.open("https://www.youtube.com")
 
-            if escolha == "1":
-                print("Abrindo spotify...")
-                os.system("start spotify")
-            elif escolha == "2":
-                print("Abrindo Navegador...")
-                os.system("start https://www.spotify.com")
-
-        if "youtube" in comando:
-            print("Digite [1] para navegador ou [2] para voltar ")
-            escolha = input("> ")
-
-            if escolha == "1":
-                print("Abrindo Navegador...")
-                os.system("start https://www.youtube.com") 
-            elif escolha == "2":
-                print("Voltando...")
         elif "sair" in comando:
-            print("Finalizando Sistema...")
+            print("Encerrando o OCOSS. Até logo!")
             break
+
         else:
-            print("Desculpe, não reconheço esse comando.")
+            print("Comando não reconhecido. Tente: clima, calculadora, spotify, youtube.")
 
 iniciar_ocoss()
