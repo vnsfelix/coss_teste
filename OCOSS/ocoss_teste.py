@@ -1,23 +1,46 @@
 import os
+import webbrowser
 
 def iniciar_ocoss():
+    print("----- OCOSS iniciado. Digite 'sair' para encerrar ou 'ajuda' para mais informações. -----")
+    
     while True:
-        comando = input("\nO que o senhor gostaria de fazer hoje? (Ou digite 'sair'): ").lower().strip()
+        comando = input("\nO que você gostaria de fazer hoje? ").lower().strip()
 
-        if "spotify" in comando:
-            print("Deseja abir no [1] Aplicativo ou [2] Navegador?")
-            escolha = input("> ")
+        if "clima" in comando:
+            print("[1] Aplicativo  [2] Navegador  [3] Voltar")
+            escolha = input("> ").strip()
+            if escolha == "1":
+                os.system("start bingweather:")
+            elif escolha == "2":
+                webbrowser.open("https://www.google.com/search?q=clima+hoje")
+            elif escolha == "3":
+                print("Voltando...")
+                continue
 
+        elif "calculadora" in comando:
+            print("Abrindo calculadora...")
+            os.system("calc")
+
+        elif "spotify" in comando:
+            print("[1] Aplicativo  [2] Navegador  [3] Voltar")
+            escolha = input("> ").strip()
             if escolha == "1":
                 os.system("start spotify:")
             elif escolha == "2":
-                os.system("start https://www.spotify.com")
-            else:
-                print("opção invalida.")
+                webbrowser.open("https://www.spotify.com")
+            elif escolha == "3":
+                print("Voltando...")
+                continue
+
+        elif "youtube" in comando:
+            webbrowser.open("https://www.youtube.com")
+
         elif "sair" in comando:
-            print("Finalizando Sistema...")
+            print("Encerrando o OCOSS. Até logo!")
             break
+
         else:
-            print("Desculpe, não reconheço esse comando.")
-        
+            print("Comando não reconhecido. Tente: ajuda, clima, calculadora, spotify, youtube.")
+
 iniciar_ocoss()
