@@ -3,9 +3,10 @@ import webbrowser
 
 def iniciar_ocoss():
     print("----- OCOSS iniciado. Digite 'sair' para encerrar ou 'ajuda' para mais informações. -----")
+    print("\n🤖 Boas vindas ao OCOSS, o seu mais novo assitente virtual!")
     
     while True:
-        comando = input("\nO que você gostaria de fazer hoje? ").lower().strip()
+        comando = input("O que você gostaria de fazer hoje?:").lower().strip()
 
         if "clima" in comando:
             print("[1] Aplicativo  [2] Navegador  [3] Voltar")
@@ -18,14 +19,15 @@ def iniciar_ocoss():
                 print("Voltando...")
                 continue
         elif "ajuda" in comando:
-            print("""=== COMANDOS DISPONÍVEIS ===
-                    - clima       → Abre a previsão do tempo
-                    - calculadora → Abre a calculadora
-                    - spotify     → Abre o Spotify
-                    - youtube     → Abre o YouTube
-                    - ajuda       → Mostra esta mensagem
-                    - sair        → Encerra o OCOSS
-                    ============================""")
+            print("""
+=== COMANDOS DISPONÍVEIS ===
+- clima        Abre a previsão do tempo
+- calculadora  Abre a calculadora
+ - spotify      Abre o Spotify
+- youtube      Abre o YouTube
+- ajuda       Mostra esta mensagem
+- sair        Encerra o OCOSS
+""")
 
         elif "calculadora" in comando:
             print("Abrindo calculadora...")
