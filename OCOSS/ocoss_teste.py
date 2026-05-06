@@ -44,6 +44,9 @@ def iniciar_ocoss():
                 print("Voltando...")
                 continue
 
+        elif "instagram" in comando:
+            webbrowser.open("https://www.instagram.com/")
+
         elif "youtube" in comando:
             webbrowser.open("https://www.youtube.com")
 
